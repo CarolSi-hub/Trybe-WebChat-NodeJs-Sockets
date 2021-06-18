@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebChat Project</title>    
+    <script src="/socket.io/socket.io.js"></script>
+    
+</head>
+<body>
+    <aside>
+        <ul id="userList"></ul>
+    </aside>
+    <section>
+        
+        <input type="text" id="messageInput" data-testid="message-box" />
+        <button id="sendMessageButton" data-testid="send-button">Enviar</button>
+
+    </section>
+  
+    <section>
+        <input type="text" id="newNickName" data-testid="nickname-box"/>
+        <button id="updateNickName" data-testid="nickname-button">Salvar e Mudar</button>
+    </section>
+
+    <ul id="messagesList">
+    <% messages.forEach(( element ) => { %> 
+        <li data-testid="message">
+          <%= element.timestamp %> <%= element.nickname %> <%= element.message %>
+        </li>
+      <% }) %>
+    </ul>
+    
+    <script src="/js/script.js"></script> 
+</body>
+</html>
